@@ -1,0 +1,18 @@
+---
+logging:
+  is_debug: true
+listen:
+  bind_ip: 127.0.0.1
+  port: 8080
+  read_timeout: 5s
+  write_timeout: 5s
+  shutdown_timeout: 10s
+storage:
+  lifetime: 20s
+  backend: mongodb
+  mongodb:
+    host: 127.0.0.1
+    port: 27017
+    user: root
+    pass: pass
+    pool_size: 10

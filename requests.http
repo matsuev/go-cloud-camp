@@ -1,0 +1,24 @@
+POST http://localhost:8080/config
+content-type: application/json
+
+{
+    "service": "sample",
+    "data": {
+      "key1": "value1",
+      "key2": "value2"
+    }
+}
+
+###
+
+GET http://localhost:8080/config?service=sample
+
+###
+DELETE http://localhost:8080/config?service=service-10&version=2
+
+###
+
+DELETE http://localhost:8080/config?service=sample
+
+###
+

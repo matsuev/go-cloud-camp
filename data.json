@@ -1,0 +1,13 @@
+{
+	"service": "service-10",
+	"data": {
+		"key1": "value1",
+		"key2": {
+			"key4": 12,
+			"key5": 16,
+			"key7": ["ghjgkjhgjhkg", "ghjkgjhgj"],
+			"key8": "ghjfdgjhgfsd"
+		},
+		"key3": "value3"
+	}
+}
