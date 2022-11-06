@@ -93,7 +93,31 @@ GET http://host:port/config?service=name&version=number
 - 404 – Ошибка. Конфигурация не найдена
 - 500 – Внутренняя ошибка сервера
 
-Дополнительные библиотеки, использованные в проекте:
+## Клиентская библиотека
+
+Клиентская библиотека для языка GoLang реализует основные функции работы с конфигурацией:
+
+```go
+func CreateConfig(ctx context.Context, data interface{}) error
+
+func ReadAndDecodeConfig(ctx context.Context, cfg interface{}) error
+
+func ReadConfigBytes(ctx context.Context) ([]byte, error)
+
+func UpdateConfig(ctx context.Context, data interface{}) error
+
+func DeleteConfig(ctx context.Context) error
+```
+
+Дополнительно в библиотеке реализована функция автоматического обновления конфигурации:
+
+```go
+func AssignRefreshCallback(period time.Duration, callback func([]byte)) error
+```
+
+В отдельной горутине, через заданные промежутки времени запрашивается конфигурация с сервера. Если она не совпадает с текущей, вызывается функция _callback_ для обработки новой конфигурации.
+
+### Дополнительные библиотеки, использованные в проекте:
 
 - [github.com/ilyakaznacheev/cleanenv](github.com/ilyakaznacheev/cleanenv)
 - [github.com/julienschmidt/httprouter](github.com/julienschmidt/httprouter)
