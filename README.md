@@ -117,6 +117,8 @@ func AssignRefreshCallback(period time.Duration, callback func([]byte)) error
 
 В отдельной горутине, через заданные промежутки времени запрашивается конфигурация с сервера. Если она не совпадает с текущей, вызывается функция _callback_ для обработки новой конфигурации.
 
+Пример использования клиентской библиотеки представлен в каталоге example
+
 ### Дополнительные библиотеки, использованные в проекте:
 
 - [github.com/ilyakaznacheev/cleanenv](github.com/ilyakaznacheev/cleanenv)
